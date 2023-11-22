@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.post('/', todoController.createTodo);
 router.get('/', todoController.getTodos);
-router.post('/completed', todoController.completedATodo);
+router.put('/completed', todoController.completedATodo);
 router.get('/completed', todoController.getCompletedTodos);
 
 module.exports = router;

@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const { run } = require('./kafkaConsumer');
 
 const userRoutes = require('./routes/userRoutes');
 
@@ -14,7 +15,7 @@ async function connectToMongoDB() {
   console.log('DB connected successfully...');
 }
 
-app.use(express.json())
+app.use(express.json());
 app.use('/users', userRoutes);
 
 connectToMongoDB()

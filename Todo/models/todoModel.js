@@ -7,6 +7,14 @@ const todoSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
+  typeOfTask: {
+    type: String,
+    enum: ['Shopping', 'Bills'],
+  },
+  completed: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model('Todo', todoSchema);
